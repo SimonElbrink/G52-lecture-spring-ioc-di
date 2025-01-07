@@ -32,7 +32,21 @@ public class Main {
                 "Test"
         );
 
-        System.out.println(transactionBTC1Simon.toString());
+        Transaction transactionETH10Simon = management.createDepositTransaction(
+                simon_wallet.getId(),
+                CryptoCurrency.ETH,
+                new BigDecimal(10),
+                "test"
+        );
+
+        Transaction transactionBNB1000Simon = management.createDepositTransaction(
+                simon_wallet.getId(),
+                CryptoCurrency.BNB,
+                new BigDecimal(1000),
+                "test"
+        );
+
+        System.out.println(walletManagement.getById(simon_wallet.getId()));
 
 
     }
