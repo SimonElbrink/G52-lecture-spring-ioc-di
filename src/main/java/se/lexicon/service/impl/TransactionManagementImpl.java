@@ -15,9 +15,14 @@ import java.util.Optional;
 public class TransactionManagementImpl implements TransactionManagement {
 
 
-    private WalletDao walletDao;
-    private TransactionDao transactionDao;
+    private final WalletDao walletDao;
+    private final TransactionDao transactionDao;
 
+    //DI
+    public TransactionManagementImpl(WalletDao walletDao, TransactionDao transactionDao) {
+        this.walletDao = walletDao;
+        this.transactionDao = transactionDao;
+    }
 
     //1. Check for Null
     //2. Check wallet ID exists (call Dao)

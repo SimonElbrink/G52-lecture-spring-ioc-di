@@ -12,7 +12,7 @@ import java.util.Optional;
 // Where business logic happens, Connect to other services, Auth, Validation ...
 public class WalletManagementImpl implements WalletManagement {
 
-    private WalletDao walletDao;
+    private final WalletDao walletDao;
 
     public WalletManagementImpl(WalletDao walletDao) {
         this.walletDao = walletDao;
