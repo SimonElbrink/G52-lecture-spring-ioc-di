@@ -1,5 +1,7 @@
 package se.lexicon.service.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import se.lexicon.dao.TransactionDao;
 import se.lexicon.dao.WalletDao;
 import se.lexicon.exception.WalletNotFoundException;
@@ -12,13 +14,15 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
+@Component // Making a Bean
 public class TransactionManagementImpl implements TransactionManagement {
 
-
+    //Dependencies
     private final WalletDao walletDao;
     private final TransactionDao transactionDao;
 
-    //DI
+    //Dependency inject
+    @Autowired
     public TransactionManagementImpl(WalletDao walletDao, TransactionDao transactionDao) {
         this.walletDao = walletDao;
         this.transactionDao = transactionDao;
